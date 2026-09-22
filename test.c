@@ -15,7 +15,7 @@ int main() {
     printArena(arena); 
 
     Student* Pete = (Student*)arena_alloc(arena, sizeof(Student));
-    Pete->ID = 123; 
+    Pete->ID = 1; 
     Pete->firstName = "Pete"; 
     Pete->lastName = "Castle";
     printArena(arena); 

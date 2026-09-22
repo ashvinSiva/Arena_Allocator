@@ -8,10 +8,9 @@
 
 // Shifts n to the left to add 30 zeros
 // GiB to GB: GB = GiB * (1024^3/1000^3) 
-typedef void* void_ptr; 
-#define PTR_SIZE ((u64)izeof(void_ptr))
+#define PTR_SIZE (sizeof(void*))
 // Since we are returning the capacity size including the size of u64 twice 
-#define BASE (sizeof(Arena*)) 
+#define BASE (sizeof(Arena))  
 // Rounding cursor to the next aligned address to ensure we add space contiguously
 #define ALIGN_UP(curr, pow) (((u64)curr + (u64)pow - 1) & ~((u64)pow - 1))
 

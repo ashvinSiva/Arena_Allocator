@@ -34,8 +34,8 @@ void* arena_alloc(Arena* arena, u64 size) {
     // Make sure we add by alignment along with correct padding to avoid fragmentation and non-contiguous uneven space
     assert(align_pos + size < arena->capacity); 
     arena->offset = align_pos + size; 
-
-    u8* out = (u8*)arena + align_pos; // increment by 1 byte
+    
+    u8* out = (u8*)arena + align_pos; // increment by 1 byte, why?
    
     return out;
 }
