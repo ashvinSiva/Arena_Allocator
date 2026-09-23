@@ -6,4 +6,8 @@ What if we can store every objects in a large chunk of memory? Anytime we add ob
 ## References
 - https://www.dgtlgrove.com/p/untangling-lifetimes-the-arena-allocator
 - https://andreleite.com/posts/2025/nstl/virtual-memory-arena-allocator/
+- https://www.submillisecond.com/glossary/systems/memory-alignment#worked-example---struct-layout
+- https://github.com/CobbCoding1/c-allocators
+- https://medium.com/@mrajagopalaswamy/malloc-and-its-hidden-metadata-de77aa212090
+- 
   
