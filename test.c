@@ -1,6 +1,4 @@
 #include "base.h" 
-#include <stdio.h>
-
 
 void printArena(Arena* arena); 
 
