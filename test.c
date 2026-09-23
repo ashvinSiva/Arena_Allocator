@@ -10,6 +10,11 @@ typedef struct person {
     char* lastName; 
 } Student;
 
+typedef struct pt {
+    i32 x;
+    i32 y;
+} Point;
+
 int main() {
     Arena* arena = create_arena(MiB(1)); 
     printArena(arena); 
@@ -38,14 +43,29 @@ int main() {
     Foggy->lastName = "Nelson"; 
     printArena(arena); 
 
-    arena_pop(arena, sizeof(Student)); 
+    
+    Point* p1 = (Point*)arena_alloc(arena, sizeof(Point)); 
+    p1->x = 0; 
+    p1->y = 0;
 
-    arena_clear(arena); 
+    Point* p2 = (Point*)arena_alloc(arena, sizeof(Point));
+    p2->x = 1;
+    p2->y = 1;
+    
+    Point* p3 = (Point*)arena_alloc(arena, sizeof(Point)); 
+    p3->x = 2;
+    p3->y = 2;
 
-    for(int i = 0; i < 100; i++) {
-        int* ptr = (int*)arena_alloc(arena, sizeof(int));
+    printArena(arena);
+
+    //arena_clear(arena); 
+
+    for(i32 i = 0; i < 100; i++) {
+        int* ptr = (int*)arena_alloc(arena, 4);
         *ptr = i; 
     }
+
+    arena_pop(arena, sizeof(int));
    
     printArena(arena); 
 

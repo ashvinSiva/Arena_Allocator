@@ -41,10 +41,11 @@ void* arena_alloc(Arena* arena, u64 size) {
 }
 
 void* arena_pop(Arena* arena, u64 prev_size) {
-
+   
     assert(prev_size < arena->capacity && prev_size < arena->offset); 
-    
-    arena->offset -= prev_size; 
+    u64 align_pos = ALIGN_UP(prev_size, PTR_SIZE); //alignment in memory space is very necessary to ensure contiguous sequence 
+    arena->offset -= align_pos;
+
     
     return arena; 
 }
